@@ -8,7 +8,7 @@ import './App.css';
 class App extends PureComponent {
   render() {
     return (
-      <div>
+      <div className="center">
         <h1>CloudWork</h1>
         <hr />
         
@@ -18,7 +18,7 @@ class App extends PureComponent {
         <hr />
 
         <div>
-          <h2>Workloads</h2>
+          <h2 className="center">Workloads</h2>
           <WorkloadListContainer />
         </div>
       </div>

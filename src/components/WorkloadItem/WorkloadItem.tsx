@@ -25,13 +25,13 @@ const WorkloadItem: React.SFC<WorkloadItemProps> = (props) => (
       <h3 className="WorkloadItem-heading">Workload #{props.id}</h3>
       <span className="WorkloadItem-subHeading">Complexity: {props.complexity}</span>
     </div>
-    <div>
+    <div className="column">
       {props.status === 'WORKING'
         ? (
           <>
             <span><TimeAgo date={props.completeDate} /></span>
-            <button 
-              className="WorkloadItem-secondaryButton" 
+            <button
+              className="WorkloadItem-secondaryButton"
               onClick={props.onCancel}
             >
               Cancel
