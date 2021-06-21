@@ -39,7 +39,7 @@ const WorkloadItem: React.SFC<WorkloadItemProps> = (props) => (
           </>
         )
         : (
-          <span className="WorkloadItem-statusText">{props.status.toLowerCase()}</span>
+          <span className={`WorkloadItem-statusText ${props.status.toLowerCase()}`}>{props.status.toLowerCase()}</span>
         )
       }
     </div>
