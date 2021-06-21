@@ -29,9 +29,8 @@ export const workloadSubmission: AppEpic = (action$) => (
 const workloadCompletion: AppEpic = (action$) => (
     action$.pipe(
         filter(isActionOf(workloadsActions.created)),
-        mergeMap(createdAction => timer(createdAction.payload.completeDate.getTime() - new Date().getTime() + 1)
+        mergeMap(createdAction => timer(createdAction.payload.completeDate.getTime() - new Date().getTime() + 1000)
             .pipe(
-                takeWhile(() => createdAction.payload.status === "CANCELED"),
                 mergeMap(() => from(workloadService.checkStatus({id: createdAction.payload.id}))
                     .pipe(
                         map(wl => updateStatus(wl))
