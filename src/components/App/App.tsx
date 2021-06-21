@@ -6,7 +6,12 @@ import './App.css';
 
 
 class App extends PureComponent {
-  render() {
+    clickHandler() {
+        const theme = document.body.dataset.theme;
+        const nextTheme = theme === 'light' ? 'dark' : 'light'
+        document.body.dataset.theme=nextTheme;
+    }
+    render() {
     return (
       <div className="center">
         <h1>CloudWork</h1>
@@ -21,6 +26,7 @@ class App extends PureComponent {
           <h2 className="center">Workloads</h2>
           <WorkloadListContainer />
         </div>
+          <button className="toggle" onClick={this.clickHandler}>Toggle Theme</button>
       </div>
     );
   }
