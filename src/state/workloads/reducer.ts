@@ -42,7 +42,14 @@ export const workloadReducer = (state: WorkloadsState = initialState, action: Wo
             status: action.payload.status,
           },
         }
-
+    case getType(workloadActions.cancel):
+      return {
+        ...state,
+        [action.payload.id]: {
+          ...state[action.payload.id],
+          status: "CANCELED",
+        }
+      }
       default:
         return state;
   }
