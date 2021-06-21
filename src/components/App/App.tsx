@@ -26,6 +26,7 @@ class App extends PureComponent {
           <h2 className="center">Workloads</h2>
           <WorkloadListContainer />
         </div>
+          Dark Mode:
           <input className="tgl tgl-light" id="cb1" type="checkbox" onChange={this.clickHandler}/>
           <label className="tgl-btn" htmlFor="cb1"></label>
       </div>
